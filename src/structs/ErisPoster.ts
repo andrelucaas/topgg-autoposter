@@ -49,7 +49,7 @@ export class ErisPoster extends BasePoster implements BasePosterInterface {
 
   public async getStats (): Promise<BotStats> {
     return {
-      serverCount: this.client.guilds.size,
+      serverCount: Object.keys(this.client.guildShardMap).length,
       shardCount: this.client.options.maxShards as number
     }
   }
